@@ -3,22 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مركز المساعدة الذكي لنظام قطر للتعليم - دعم فوري بالذكاء الاصطناعي والأوامر الصوتية">
-    <meta name="keywords" content="قطر, التعليم, نظام قطر, استعادة كلمة المرور, المساعد الصوتي, ElevenLabs">
-    <meta name="author" content="سحر عثمان - منسقة المشاريع الإلكترونية">
-    <meta property="og:title" content="مركز المساعدة الذكي - نظام قطر للتعليم">
-    <meta property="og:description" content="دعم فوري عبر الأوامر الصوتية لحل مشاكل الدخول لنظام قطر للتعليم">
-    <meta property="og:image" content="images/qatar_education_english_only.png">
-    
     <title>مركز المساعدة - نظام قطر للتعليم</title>
-    
-    <!-- مكتبة الأيقونات -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- خطوط تحسينية -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -26,9 +11,6 @@
             --qatar-gold: #C79900;
             --qatar-dark: #5A0E1F;
             --qatar-light: #F9F5E9;
-            --qatar-gray: #F5F5F5;
-            --success-color: #28a745;
-            --error-color: #dc3545;
         }
 
         * {
@@ -38,328 +20,103 @@
         }
 
         body {
-            font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             background: linear-gradient(135deg, var(--qatar-light) 0%, #FFFFFF 100%);
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
-        /* Header */
+        /* Header بسيط */
         .header {
             background: linear-gradient(135deg, var(--qatar-maroon) 0%, var(--qatar-dark) 100%);
             color: white;
-            padding: 25px 0;
+            padding: 15px 0;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 C50,0 50,100 100,100 L100,0 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: 100% 100%;
-            opacity: 0.3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            font-size: 1.8em;
+            margin-bottom: 5px;
         }
 
         .header p {
-            font-size: 1.2em;
+            font-size: 1em;
             opacity: 0.9;
-            position: relative;
         }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-            width: 100%;
-        }
-
-        /* Connection Status */
-        .connection-status {
+        /* المحادثة الصوتية - صغيرة وعلى اليمين */
+        .voice-bot-container {
+            position: fixed;
+            right: 20px;
+            top: 120px;
+            width: 350px;
             background: white;
             border-radius: 10px;
             padding: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             border: 2px solid var(--qatar-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            z-index: 1000;
         }
 
-        .status-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--success-color);
-            animation: pulse 2s infinite;
-        }
-
-        .status-indicator.offline {
-            background: var(--error-color);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        /* Voice Bot Section */
-        .voice-bot-container {
-            background: linear-gradient(135deg, var(--qatar-gray) 0%, white 100%);
-            border-radius: 15px;
-            padding: 30px;
+        .voice-bot-container h3 {
+            color: var(--qatar-maroon);
+            font-size: 1.1em;
+            margin-bottom: 10px;
             text-align: center;
-            border: 2px dashed var(--qatar-gold);
-            margin-bottom: 30px;
-            position: relative;
         }
 
-        .voice-bot-container h2 {
-            color: var(--qatar-maroon);
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            line-height: 1.4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .voice-bot-container h2 small {
-            font-size: 0.6em;
-            color: var(--qatar-dark);
-            font-weight: normal;
-        }
-
-        .bot-intro {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-right: 5px solid var(--qatar-gold);
-        }
-
-        .bot-intro strong {
-            color: var(--qatar-maroon);
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* تنسيق خاص لودجت ElevenLabs */
+        /* تنسيق خاص لودجت ElevenLabs - صغير */
         elevenlabs-convai {
             display: block;
             width: 100% !important;
-            height: 500px !important;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin: 20px auto;
-            border: 2px solid var(--qatar-gold);
-            background: white;
+            height: 300px !important;
+            border-radius: 8px;
+            border: 1px solid var(--qatar-gold);
         }
 
-        .bot-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+        /* المحتوى الرئيسي */
+        .main-content {
+            padding: 30px;
+            margin-right: 380px; /* يترك مسافة للمحادثة على اليمين */
+            max-width: 800px;
         }
 
-        .feature-card {
-            background: var(--qatar-gold);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card h4 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-
-        .feature-card p {
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        /* Image & Links Section */
-        .links-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--qatar-gold);
-        }
-
-        .links-section h2 {
+        .main-content h2 {
             color: var(--qatar-maroon);
-            font-size: 2em;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--qatar-gold);
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .image-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 2px solid var(--qatar-gold);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container img:hover {
-            transform: scale(1.02);
-        }
-
-        .image-container p {
-            margin-top: 15px;
-            color: var(--qatar-maroon);
-            font-weight: bold;
-            font-size: 1.1em;
+        .main-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
         }
 
         .links-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .link-item {
-            background: var(--qatar-gray);
-            padding: 20px;
-            border-radius: 10px;
-            border-right: 5px solid var(--qatar-maroon);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .link-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--qatar-maroon);
-            transition: width 0.3s ease;
-        }
-
-        .link-item:hover::before {
-            width: 100%;
-            opacity: 0.05;
-        }
-
-        .link-item:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 4px solid var(--qatar-maroon);
         }
 
         .link-item h3 {
             color: var(--qatar-maroon);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .link-item p {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.1em;
         }
 
         .link-item a {
             color: var(--qatar-gold);
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
-            display: block;
-            padding: 12px;
-            background: white;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            word-break: break-all;
-        }
-
-        .link-item a:hover {
-            background: var(--qatar-maroon);
-            color: white;
-            transform: translateX(-5px);
-        }
-
-        .link-item a::after {
-            content: '\f08e';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 8px;
-        }
-
-        /* Loading Spinner */
-        .loading-spinner {
-            display: none;
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--qatar-gray);
-            border-top: 4px solid var(--qatar-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         /* Footer */
@@ -367,309 +124,69 @@
             background: var(--qatar-dark);
             color: white;
             text-align: center;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-
-        .footer p {
-            margin: 5px 0;
-            font-size: 1em;
-            line-height: 1.5;
-        }
-
-        .footer a {
-            color: var(--qatar-gold);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: white;
-        }
-
-        /* Error Message */
-        .error-message {
-            background: #f8d7da;
-            color: var(--error-color);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border: 1px solid var(--error-color);
-            display: none;
-        }
-
-        /* Clear Cache Button */
-        .clear-cache-btn {
-            background: var(--qatar-gold);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            margin: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .clear-cache-btn:hover {
-            background: var(--qatar-maroon);
-            transform: translateY(-2px);
+            padding: 20px 0;
+            margin-top: 50px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header h1 { font-size: 1.8em; }
-            .links-section { padding: 25px; }
-            .voice-bot-container { padding: 20px; }
-            elevenlabs-convai { height: 400px !important; }
+            .voice-bot-container {
+                position: static;
+                width: 100%;
+                margin: 20px;
+                right: auto;
+                top: auto;
+            }
+            
+            .main-content {
+                margin-right: 0;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header" role="banner">
-        <h1>
-            <i class="fas fa-graduation-cap"></i>
-            مركز المساعدة الذكية
-        </h1>
+    <header class="header">
+        <h1>مركز المساعدة الذكية</h1>
         <p>خدمة دعم فوري - نظام قطر للتعليم</p>
     </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Connection Status -->
-        <div class="connection-status" id="connectionStatus" role="alert" aria-live="polite">
-            <div class="status-indicator" id="statusIndicator"></div>
-            <span id="statusText">جاري الاتصال بالمساعد الصوتي...</span>
+    <!-- المحادثة الصوتية - على اليمين وصغيرة -->
+    <div class="voice-bot-container">
+        <h3>🎙️ المساعد الصوتي</h3>
+        <elevenlabs-convai agent-id="agent_8401k8gg9x9ee0185pwy9tvhkvae"></elevenlabs-convai>
+        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <h2>نظام قطر للتعليم</h2>
+        <p>مرحباً بكم في نظام قطر الموحد للتعليم. يمكنكم استخدام المساعد الصوتي على اليمين للحصول على المساعدة الفورية.</p>
+        
+        <h3>الروابط السريعة</h3>
+        <div class="links-list">
+            <div class="link-item">
+                <h3>🔐 استعادة كلمة المرور</h3>
+                <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank">https://pwdreset.edu.gov.qa/ResetPassword.aspx</a>
+            </div>
+
+            <div class="link-item">
+                <h3>🏫 نظام قطر للتعليم</h3>
+                <a href="https://qeducation.edu.gov.qa/" target="_blank">https://qeducation.edu.gov.qa/</a>
+            </div>
+
+            <div class="link-item">
+                <h3>🎥 فيديو شرح</h3>
+                <a href="https://www.youtube.com/watch?v=30Z036u9Xp4" target="_blank">شرح استعادة كلمة المرور</a>
+            </div>
         </div>
-
-        <!-- Voice Bot Section -->
-        <section class="voice-bot-container" aria-labelledby="bot-title">
-            <h2 id="bot-title">
-                <i class="fas fa-robot"></i>
-                المساعد الصوتي الذكي - ElevenLabs
-                <small>النسخة الذكية من منسقة المشاريع الإلكترونية سحر عثمان</small>
-            </h2>
-            
-            <div class="bot-intro">
-                <p><i class="fas fa-bolt"></i> <strong>جديد!</strong> يمكنك الآن التفاعل عبر الأوامر الصوتية باللغة العربية لحل المشاكل التي تواجهكم في الحصول على اسم المستخدم وكلمة المرور أو الدخول لنظام قطر للتعليم</p>
-            </div>
-
-            <h3>🎙️ ابدأ محادثتك الصوتية الآن</h3>
-            <p style="margin-bottom: 20px;">اضغط على زر الميكروفون واسألني أي سؤال عن نظام قطر للتعليم</p>
-            
-            <!-- Loading Spinner -->
-            <div class="loading-spinner" id="loadingSpinner" role="status" aria-label="جاري التحميل"></div>
-            
-            <!-- كود الـ Embed الخاص بـ ElevenLabs -->
-            <elevenlabs-convai agent-id="agent_8401k8gg9x9ee0185pwy9tvhkvae"></elevenlabs-convai>
-            <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-
-            <!-- Error Message -->
-            <div class="error-message" id="errorMessage" role="alert"></div>
-
-            <div class="bot-features" role="list">
-                <div class="feature-card" role="listitem">
-                    <h4><i class="fas fa-microphone-alt"></i></h4>
-                    <p>دعم الأوامر الصوتية باللهجة الخليجية والعربية الفصحى</p>
-                </div>
-                <div class="feature-card" role="listitem">
-                    <h4><i class="fas fa-bolt"></i></h4>
-                    <p>استجابة فورية لاستعلاماتك</p>
-                </div>
-                <div class="feature-card" role="listitem">
-                    <h4><i class="fas fa-shield-alt"></i></h4>
-                    <p>خصوصية تامة - جميع البيانات مشفرة</p>
-                </div>
-                <div class="feature-card" role="listitem">
-                    <h4><i class="fas fa-mobile-alt"></i></h4>
-                    <p>يعمل على جميع الأجهزة</p>
-                </div>
-            </div>
-
-            <button class="clear-cache-btn" onclick="clearBotCache()" aria-label="مسح ذاكرة المساعد الصوتي">
-                <i class="fas fa-broom"></i> مسح ذاكرة المساعد
-            </button>
-        </section>
-
-        <!-- Image & Links Section -->
-        <section class="links-section" aria-labelledby="links-title">
-            <h2 id="links-title">
-                <i class="fas fa-link"></i>
-                روابط النظام والخدمات
-            </h2>
-
-            <!-- الصورة -->
-            <div class="image-container">
-                <img src="images/qatar_education_english_only.png" alt="نظام قطر الموحد للتعليم - بوابة الطالب والمعلم" loading="lazy">
-                <p>نظام قطر الموحد للتعليم - بوابة الطالب والمعلم</p>
-            </div>
-
-            <!-- قائمة الروابط -->
-            <div class="links-list" role="list">
-                <div class="link-item" role="listitem">
-                    <h3><i class="fas fa-key"></i> استعادة كلمة المرور</h3>
-                    <p>إعادة تعيين كلمة مرورك بسهولة وأمان</p>
-                    <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer">
-                        https://pwdreset.edu.gov.qa/ResetPassword.aspx
-                    </a>
-                </div>
-
-                <div class="link-item" role="listitem">
-                    <h3><i class="fas fa-school"></i> نظام قطر للتعليم</h3>
-                    <p>الوصول المباشر لنظام إدارة التعلم</p>
-                    <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer">
-                        https://qeducation.edu.gov.qa/
-                    </a>
-                </div>
-
-                <div class="link-item" role="listitem">
-                    <h3><i class="fas fa-video"></i> فيديو شرح استعادة كلمة المرور</h3>
-                    <p>شرح مصور خطوة بخطوة</p>
-                    <a href="https://www.youtube.com/watch?v=30Z036u9Xp4" target="_blank" rel="noopener noreferrer">
-                        https://www.youtube.com/watch?v=30Z036u9Xp4
-                    </a>
-                </div>
-
-                <div class="link-item" role="listitem">
-                    <h3><i class="fas fa-tv"></i> قناة قطر للتعليم</h3>
-                    <p>محتوى تعليمي متنوع وشامل</p>
-                    <a href="https://www.youtube.com/@qatareducation221" target="_blank" rel="noopener noreferrer">
-                        https://www.youtube.com/@qatareducation221
-                    </a>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <p>© 2025 - جميع الحقوق محفوظة - مدرسة عثمان بن عفان النموذجية</p>
-        <p>تطوير وتنفيذ: <i class="fas fa-user-circle"></i> سحر عثمان / منسقة المشاريع الإلكترونية</p>
-        <p>مديرة المدرسة / منيرة الهاجري</p>
-        <p>
-            <a href="mailto:support@example.com" aria-label="إرسال بريد إلكتروني للدعم">
-                <i class="fas fa-envelope"></i> تواصل معنا
-            </a>
-        </p>
+    <footer class="footer">
+        <p>© 2025 - مدرسة عثمان بن عفان النموذجية</p>
+        <p>تطوير: سحر عثمان / منسقة المشاريع الإلكترونية</p>
     </footer>
-
-    <script>
-        // دالة للتحقق من حالة الاتصال
-        function checkConnection() {
-            const statusIndicator = document.getElementById('statusIndicator');
-            const statusText = document.getElementById('statusText');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            
-            // محاكاة التحقق من الاتصال
-            setTimeout(() => {
-                const isOnline = navigator.onLine;
-                if (isOnline) {
-                    statusIndicator.className = 'status-indicator';
-                    statusText.textContent = 'المساعد الصوتي متصل وجاهز للاستخدام';
-                    loadingSpinner.style.display = 'none';
-                } else {
-                    statusIndicator.className = 'status-indicator offline';
-                    statusText.textContent = 'لا يوجد اتصال بالإنترنت - المساعد الصوتي غير متاح';
-                    showError('يرجى التحقق من اتصالك بالإنترنت لاستخدام المساعد الصوتي');
-                }
-            }, 2000);
-        }
-
-        // دالة عرض رسائل الخطأ
-        function showError(message) {
-            const errorDiv = document.getElementById('errorMessage');
-            errorDiv.textContent = message;
-            errorDiv.style.display = 'block';
-            setTimeout(() => {
-                errorDiv.style.display = 'none';
-            }, 5000);
-        }
-
-        // دالة مسح ذاكرة التخزين المؤقت
-        function clearBotCache() {
-            if (confirm('هل أنت متأكد من مسح ذاكرة المساعد الصوتي؟')) {
-                // محاكاة مسح الذاكرة
-                const btn = event.target;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري المسح...';
-                
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-broom"></i> تم المسح بنجاح';
-                    btn.style.background = 'var(--success-color)';
-                    
-                    setTimeout(() => {
-                        btn.innerHTML = '<i class="fas fa-broom"></i> مسح ذاكرة المساعد';
-                        btn.style.background = 'var(--qatar-gold)';
-                    }, 2000);
-                }, 1500);
-            }
-        }
-
-        // دالة بدء جلسة صوتية
-        function startVoiceSession() {
-            const widget = document.querySelector('elevenlabs-convai');
-            if (widget && widget.startConversation) {
-                widget.startConversation();
-            } else {
-                showError('لم يتم تحميل المساعد الصوتي بعد، يرجى الانتظار');
-            }
-        }
-
-        // التحقق من تحميل واجهة ElevenLabs
-        window.addEventListener('load', () => {
-            checkConnection();
-            
-            // مراقبة تحميل الودجت
-            const script = document.querySelector('script[src*="elevenlabs"]');
-            if (script) {
-                script.onload = () => {
-                    console.log('✅ تم تحميل المساعد الصوتي بنجاح');
-                    document.getElementById('statusText').textContent = 'المساعد الصوتي جاهز للاستخدام';
-                };
-                
-                script.onerror = () => {
-                    showError('❌ فشل تحميل المساعد الصوتي، يرجى تحديث الصفحة');
-                    document.getElementById('statusText').textContent = 'فشل تحميل المساعد الصوتي';
-                    document.getElementById('statusIndicator').className = 'status-indicator offline';
-                };
-            }
-        });
-
-        // مراقبة حالة الاتصال
-        window.addEventListener('online', checkConnection);
-        window.addEventListener('offline', checkConnection);
-
-        // تسجيل زيارات المستخدمين (يمكن ربطها بـ Google Analytics لاحقاً)
-        function trackVisit() {
-            const visitData = {
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-                language: navigator.language,
-                url: window.location.href
-            };
-            console.log('User Visit:', visitData);
-            // يمكن إرسال هذه البيانات إلى خادم لاحقاً
-        }
-
-        // استدعاء عند تحميل الصفحة
-        trackVisit();
-
-        // دالة لنسخ الروابط
-        function copyLink(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('✅ تم نسخ الرابط: ' + text);
-            }).catch(err => {
-                showError('❌ فشل نسخ الرابط: ' + err);
-            });
-        }
-
-        // إضافة أحداث نسخ للروابط
-        document.querySelectorAll('.link-item a').forEach(link => {
-            link.addEventListener('contextmenu', (e) => {
-                e.preventDefault();
-                copyLink(link.href);
-            });
-        });
-    </script>
 </body>
 </html>
