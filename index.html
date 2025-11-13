@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مركز المساعدة - نظام قطر للتعليم</title>
-    
+
+    <!-- ألوان قطرية احترافية -->
     <style>
         :root {
             --qatar-maroon: #8A1538;
-            --qatar-gold: #C79900;
+            --qatar-gold: #CBA135;
             --qatar-dark: #5A0E1F;
-            --qatar-light: #F9F5E9;
+            --qatar-light: #FAF6F0;
+            --soft-gray: #F1F1F1;
         }
 
         * {
@@ -20,173 +22,204 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(135deg, var(--qatar-light) 0%, #FFFFFF 100%);
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
+            font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+            background: var(--qatar-light);
+            color: #222;
+            line-height: 1.8;
         }
 
-        /* Header بسيط */
+        /* ===== HEADER ===== */
         .header {
-            background: linear-gradient(135deg, var(--qatar-maroon) 0%, var(--qatar-dark) 100%);
+            background: linear-gradient(135deg, var(--qatar-maroon), var(--qatar-dark));
             color: white;
-            padding: 15px 0;
+            padding: 25px 15px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         .header h1 {
-            font-size: 1.8em;
-            margin-bottom: 5px;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .header p {
-            font-size: 1em;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
-        /* المحادثة الصوتية - صغيرة وعلى اليمين */
+        /* ===== VOICE BOT ===== */
         .voice-bot-container {
             position: fixed;
             right: 20px;
-            top: 120px;
+            top: 130px;
             width: 350px;
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             border: 2px solid var(--qatar-gold);
-            z-index: 1000;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            z-index: 999;
         }
 
         .voice-bot-container h3 {
-            color: var(--qatar-maroon);
-            font-size: 1.1em;
-            margin-bottom: 10px;
             text-align: center;
+            margin-bottom: 12px;
+            color: var(--qatar-maroon);
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
-        /* تنسيق خاص لودجت ElevenLabs - صغير */
         elevenlabs-convai {
             display: block;
             width: 100% !important;
             height: 300px !important;
-            border-radius: 8px;
             border: 1px solid var(--qatar-gold);
+            border-radius: 10px;
         }
 
-        /* المحتوى الرئيسي */
+        /* ===== MAIN CONTENT ===== */
         .main-content {
-            padding: 30px;
-            margin-right: 380px; /* يترك مسافة للمحادثة على اليمين */
-            max-width: 800px;
+            padding: 40px 30px;
+            margin-right: 380px;
+            max-width: 900px;
         }
 
         .main-content h2 {
             color: var(--qatar-maroon);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .main-content h3 {
+            color: var(--qatar-maroon);
+            margin: 25px 0 10px;
+            font-size: 1.3rem;
         }
 
         .main-content p {
+            font-size: 1.1rem;
             margin-bottom: 15px;
-            line-height: 1.8;
         }
 
+        /* ===== LINKS ===== */
         .links-list {
             display: grid;
             grid-template-columns: 1fr;
             gap: 15px;
-            margin-top: 20px;
         }
 
         .link-item {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-            border-right: 4px solid var(--qatar-maroon);
+            background: #ffffff;
+            padding: 18px;
+            border-radius: 10px;
+            border-right: 5px solid var(--qatar-maroon);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
         }
 
-        .link-item h3 {
-            color: var(--qatar-maroon);
+        .link-item h4 {
             margin-bottom: 8px;
-            font-size: 1.1em;
+            font-size: 1.15rem;
+            color: var(--qatar-maroon);
+            font-weight: 700;
         }
 
         .link-item a {
-            color: var(--qatar-gold);
             text-decoration: none;
             font-weight: bold;
+            color: var(--qatar-dark);
+            transition: 0.3s;
         }
 
-        /* Footer */
+        .link-item a:hover {
+            color: var(--qatar-maroon);
+        }
+
+        /* ===== FOOTER ===== */
         .footer {
-            background: var(--qatar-dark);
+            margin-top: 60px;
+            padding: 30px 10px;
+            background: var(--qatar-maroon);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+            font-size: 0.95rem;
+            opacity: 0.95;
         }
 
-        /* Responsive */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .voice-bot-container {
                 position: static;
                 width: 100%;
-                margin: 20px;
-                right: auto;
-                top: auto;
+                margin: 20px 0;
             }
-            
+
             .main-content {
                 margin-right: 0;
                 padding: 20px;
             }
         }
     </style>
+
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <!-- Header -->
+
+    <!-- HEADER -->
     <header class="header">
         <h1>مركز المساعدة الذكية</h1>
         <p>خدمة دعم فوري - نظام قطر للتعليم</p>
     </header>
 
-    <!-- المحادثة الصوتية - على اليمين وصغيرة -->
+    <!-- VOICE ASSISTANT -->
     <div class="voice-bot-container">
-        <h3>🎙️ المساعد الصوتي</h3>
+        <h3>🎙️ المساعد الصوتي الذكي</h3>
         <elevenlabs-convai agent-id="agent_8401k8gg9x9ee0185pwy9tvhkvae"></elevenlabs-convai>
-        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async></script>
     </div>
 
-    <!-- المحتوى الرئيسي -->
+    <!-- MAIN CONTENT -->
     <div class="main-content">
         <h2>نظام قطر للتعليم</h2>
-        <p>مرحباً بكم في نظام قطر الموحد للتعليم. يمكنكم استخدام المساعد الصوتي على اليمين للحصول على المساعدة الفورية.</p>
-        
+        <p>مرحباً بكم في مركز الدعم الذكي لنظام قطر الموحد للتعليم. يمكنكم استخدام المساعد الصوتي الموجود على اليمين للحصول على مساعدة فورية في تسجيل الدخول، استعادة كلمة المرور، أو الوصول إلى الدروس.</p>
+
         <h3>الروابط السريعة</h3>
+
         <div class="links-list">
+
             <div class="link-item">
-                <h3>🔐 استعادة كلمة المرور</h3>
-                <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank">https://pwdreset.edu.gov.qa/ResetPassword.aspx</a>
+                <h4>🔐 استعادة كلمة المرور</h4>
+                <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank">
+                    https://pwdreset.edu.gov.qa/ResetPassword.aspx
+                </a>
             </div>
 
             <div class="link-item">
-                <h3>🏫 نظام قطر للتعليم</h3>
-                <a href="https://qeducation.edu.gov.qa/" target="_blank">https://qeducation.edu.gov.qa/</a>
+                <h4>🏫 نظام قطر للتعليم</h4>
+                <a href="https://qeducation.edu.gov.qa/" target="_blank">
+                    https://qeducation.edu.gov.qa/
+                </a>
             </div>
 
             <div class="link-item">
-                <h3>🎥 فيديو شرح</h3>
-                <a href="https://www.youtube.com/watch?v=30Z036u9Xp4" target="_blank">شرح استعادة كلمة المرور</a>
+                <h4>🎥 فيديو شرح استعادة كلمة المرور</h4>
+                <a href="https://www.youtube.com/watch?v=30Z036u9Xp4" target="_blank">
+                    شاهد الفيديو على YouTube
+                </a>
             </div>
+
         </div>
+
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 - مدرسة عثمان بن عفان النموذجية</p>
-        <p>تطوير: سحر عثمان / منسقة المشاريع الإلكترونية</p>
+        <p>© 2025 - مدرسة عثمان بن عفان النموذجية للبنين</p>
+        <p>تطوير: سحر عثمان | منسقة المشاريع الإلكترونية</p>
     </footer>
+
 </body>
 </html>
