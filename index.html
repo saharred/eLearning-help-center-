@@ -13,43 +13,48 @@
             --qatar-light: #FAF6F0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
+            margin: 0;
             font-family: "Cairo", sans-serif;
             background: var(--qatar-light);
-            color: #222;
-            line-height: 1.8;
+        }
+
+        /* TOP SCHOOL BAR */
+        .school-bar {
+            background: var(--qatar-maroon);
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         /* HEADER */
         .header {
-            background: linear-gradient(135deg, var(--qatar-maroon), var(--qatar-dark));
-            color: white;
-            padding: 25px 15px;
+            background: #ffffff;
+            color: var(--qatar-maroon);
+            padding: 20px 10px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         .header h1 {
             font-size: 2rem;
-            margin-bottom: 5px;
             font-weight: 800;
+            margin-bottom: 5px;
         }
 
-        .header h2 {
-            font-size: 1.2rem;
-            margin-top: 5px;
-            font-weight: 600;
-            opacity: 0.9;
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
         }
 
-        /* HERO IMAGE */
+        /* IMAGE BANNER */
         .hero-banner {
             width: 100%;
-            max-width: 1100px;
-            margin: 25px auto;
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 18px;
         }
 
         .hero-banner img {
@@ -59,33 +64,32 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
-        /* VOICE BOT */
+        /* VOICE BOT BOX */
         .voice-bot-container {
             position: fixed;
             right: 20px;
-            top: 160px;
+            top: 180px;
             width: 420px;
             background: white;
             border-radius: 12px;
             padding: 15px;
             border: 2px solid var(--qatar-gold);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
             z-index: 999;
         }
 
         .voice-bot-container h3 {
             text-align: center;
-            margin-bottom: 12px;
             color: var(--qatar-maroon);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
+            margin-bottom: 10px;
         }
 
         elevenlabs-convai {
             display: block;
             width: 100% !important;
             height: 430px !important;
-            border: 1px solid var(--qatar-gold);
             border-radius: 10px;
         }
 
@@ -93,7 +97,6 @@
         .main-content {
             padding: 40px 30px;
             margin-right: 460px;
-            max-width: 900px;
         }
 
         .main-content h2 {
@@ -102,18 +105,13 @@
             margin-bottom: 15px;
         }
 
-        .main-content h3 {
-            color: var(--qatar-maroon);
-            margin: 25px 0 10px;
-        }
-
         .links-list {
             display: grid;
             gap: 15px;
         }
 
         .link-item {
-            background: #fff;
+            background: white;
             padding: 18px;
             border-radius: 10px;
             border-right: 6px solid var(--qatar-maroon);
@@ -135,31 +133,32 @@
 
         /* FOOTER */
         .footer {
-            margin-top: 60px;
-            padding: 30px 10px;
             background: var(--qatar-maroon);
             color: white;
             text-align: center;
-            font-size: 0.95rem;
+            padding: 20px;
+            margin-top: 60px;
         }
     </style>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- SCHOOL NAME ON TOP -->
+    <div class="school-bar">
+        مدرسة عثمان بن عفان النموذجية للبنين
+    </div>
+
+    <!-- HEADER SECTION -->
     <header class="header">
         <h1>مركز مساعدة قطر للتعليم</h1>
-        <h2>مدرسة عثمان بن عفان النموذجية للبنين</h2>
         <p>الدعم الذكي لنظام قطر الموحد للتعليم</p>
     </header>
 
-    <!-- HERO IMAGE -->
+    <!-- IMAGE BANNER (your image) -->
     <div class="hero-banner">
-        <img src="qatar_education_english_only.png" alt="Qatar Education Banner">
+        <img src="qatar_education_english_only.png" alt="Qatar Education">
     </div>
 
     <!-- VOICE ASSISTANT -->
@@ -172,7 +171,7 @@
     <!-- MAIN CONTENT -->
     <div class="main-content">
         <h2>مرحباً بكم</h2>
-        <p>يقدم مركز مساعدة قطر للتعليم دعماً فورياً للمستخدمين من خلال المساعد الصوتي وروابط الدعم الرسمية.</p>
+        <p>يقدم مركز مساعدة قطر للتعليم دعماً فورياً للمستخدمين عبر المساعد الذكي وروابط الدعم الرسمية.</p>
 
         <h3>الروابط السريعة</h3>
 
