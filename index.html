@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز المساعدة - نظام قطر للتعليم</title>
+    <title>مركز مساعدة قطر للتعليم</title>
 
-    <!-- ألوان قطرية احترافية -->
     <style>
         :root {
             --qatar-maroon: #8A1538;
             --qatar-gold: #CBA135;
             --qatar-dark: #5A0E1F;
             --qatar-light: #FAF6F0;
-            --soft-gray: #F1F1F1;
         }
 
         * {
@@ -22,7 +20,7 @@
         }
 
         body {
-            font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+            font-family: "Cairo", sans-serif;
             background: var(--qatar-light);
             color: #222;
             line-height: 1.8;
@@ -43,17 +41,12 @@
             font-weight: 700;
         }
 
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
         /* ===== VOICE BOT ===== */
         .voice-bot-container {
             position: fixed;
             right: 20px;
             top: 130px;
-            width: 350px;
+            width: 400px;   /* أكبر */
             background: white;
             border-radius: 12px;
             padding: 15px;
@@ -66,14 +59,14 @@
             text-align: center;
             margin-bottom: 12px;
             color: var(--qatar-maroon);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
         }
 
         elevenlabs-convai {
             display: block;
             width: 100% !important;
-            height: 300px !important;
+            height: 420px !important; /* تكبير الارتفاع */
             border: 1px solid var(--qatar-gold);
             border-radius: 10px;
         }
@@ -81,7 +74,7 @@
         /* ===== MAIN CONTENT ===== */
         .main-content {
             padding: 40px 30px;
-            margin-right: 380px;
+            margin-right: 440px; /* مسافة أكبر للمحادثة */
             max-width: 900px;
         }
 
@@ -91,21 +84,8 @@
             font-size: 1.6rem;
         }
 
-        .main-content h3 {
-            color: var(--qatar-maroon);
-            margin: 25px 0 10px;
-            font-size: 1.3rem;
-        }
-
-        .main-content p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        /* ===== LINKS ===== */
         .links-list {
             display: grid;
-            grid-template-columns: 1fr;
             gap: 15px;
         }
 
@@ -124,18 +104,6 @@
             font-weight: 700;
         }
 
-        .link-item a {
-            text-decoration: none;
-            font-weight: bold;
-            color: var(--qatar-dark);
-            transition: 0.3s;
-        }
-
-        .link-item a:hover {
-            color: var(--qatar-maroon);
-        }
-
-        /* ===== FOOTER ===== */
         .footer {
             margin-top: 60px;
             padding: 30px 10px;
@@ -143,48 +111,42 @@
             color: white;
             text-align: center;
             font-size: 0.95rem;
-            opacity: 0.95;
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .voice-bot-container {
                 position: static;
                 width: 100%;
                 margin: 20px 0;
             }
-
             .main-content {
                 margin-right: 0;
-                padding: 20px;
             }
         }
     </style>
 
-    <!-- Cairo Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
     <!-- HEADER -->
     <header class="header">
-        <h1>مركز المساعدة الذكية</h1>
-        <p>خدمة دعم فوري - نظام قطر للتعليم</p>
+        <h1>مركز مساعدة قطر للتعليم</h1>
+        <p>الدعم الذكي لنظام قطر للتعليم</p>
     </header>
 
-    <!-- VOICE ASSISTANT -->
+    <!-- VOICE BOT -->
     <div class="voice-bot-container">
         <h3>🎙️ المساعد الصوتي الذكي</h3>
         <elevenlabs-convai agent-id="agent_8401k8gg9x9ee0185pwy9tvhkvae"></elevenlabs-convai>
         <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async></script>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- CONTENT -->
     <div class="main-content">
-        <h2>نظام قطر للتعليم</h2>
-        <p>مرحباً بكم في مركز الدعم الذكي لنظام قطر الموحد للتعليم. يمكنكم استخدام المساعد الصوتي الموجود على اليمين للحصول على مساعدة فورية في تسجيل الدخول، استعادة كلمة المرور، أو الوصول إلى الدروس.</p>
+        <h2>مرحباً بكم</h2>
+        <p>يقدم مركز مساعدة قطر للتعليم دعماً فورياً وسريعاً لمستخدمي نظام قطر الموحد للتعليم من خلال المساعد الصوتي وروابط الدعم الرسمية.</p>
 
         <h3>الروابط السريعة</h3>
 
@@ -198,7 +160,7 @@
             </div>
 
             <div class="link-item">
-                <h4>🏫 نظام قطر للتعليم</h4>
+                <h4>🏫 دخول نظام قطر للتعليم</h4>
                 <a href="https://qeducation.edu.gov.qa/" target="_blank">
                     https://qeducation.edu.gov.qa/
                 </a>
@@ -207,18 +169,17 @@
             <div class="link-item">
                 <h4>🎥 فيديو شرح استعادة كلمة المرور</h4>
                 <a href="https://www.youtube.com/watch?v=30Z036u9Xp4" target="_blank">
-                    شاهد الفيديو على YouTube
+                    شرح كامل على YouTube
                 </a>
             </div>
 
         </div>
-
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 - مدرسة عثمان بن عفان النموذجية للبنين</p>
-        <p>تطوير: سحر عثمان | منسقة المشاريع الإلكترونية</p>
+        © 2025 - مدرسة عثمان بن عفان النموذجية للبنين  
+        <br> تطوير: سحر عثمان | منسقة المشاريع الإلكترونية
     </footer>
 
 </body>
