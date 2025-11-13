@@ -13,11 +13,7 @@
             --qatar-light: #FAF6F0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: "Cairo", sans-serif;
@@ -26,7 +22,7 @@
             line-height: 1.8;
         }
 
-        /* ===== HEADER ===== */
+        /* HEADER */
         .header {
             background: linear-gradient(135deg, var(--qatar-maroon), var(--qatar-dark));
             color: white;
@@ -37,15 +33,18 @@
 
         .header h1 {
             font-size: 2rem;
-            margin-bottom: 8px;
-            font-weight: 700;
+            margin-bottom: 5px;
+            font-weight: 800;
         }
 
-        .header p {
+        .header h2 {
+            font-size: 1.2rem;
+            margin-top: 5px;
+            font-weight: 600;
             opacity: 0.9;
         }
 
-        /* ===== HERO BANNER ===== */
+        /* HERO IMAGE */
         .hero-banner {
             width: 100%;
             max-width: 1100px;
@@ -56,16 +55,16 @@
         .hero-banner img {
             width: 100%;
             border-radius: 15px;
+            border: 3px solid var(--qatar-gold);
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            border: 2px solid var(--qatar-gold);
         }
 
-        /* ===== VOICE BOT ===== */
+        /* VOICE BOT */
         .voice-bot-container {
             position: fixed;
             right: 20px;
-            top: 130px;
-            width: 400px;
+            top: 160px;
+            width: 420px;
             background: white;
             border-radius: 12px;
             padding: 15px;
@@ -85,22 +84,22 @@
         elevenlabs-convai {
             display: block;
             width: 100% !important;
-            height: 420px !important;
+            height: 430px !important;
             border: 1px solid var(--qatar-gold);
             border-radius: 10px;
         }
 
-        /* ===== MAIN CONTENT ===== */
+        /* MAIN CONTENT */
         .main-content {
             padding: 40px 30px;
-            margin-right: 440px;
+            margin-right: 460px;
             max-width: 900px;
         }
 
         .main-content h2 {
             color: var(--qatar-maroon);
-            margin-bottom: 15px;
             font-size: 1.6rem;
+            margin-bottom: 15px;
         }
 
         .main-content h3 {
@@ -114,10 +113,10 @@
         }
 
         .link-item {
-            background: #ffffff;
+            background: #fff;
             padding: 18px;
             border-radius: 10px;
-            border-right: 5px solid var(--qatar-maroon);
+            border-right: 6px solid var(--qatar-maroon);
             box-shadow: 0 2px 6px rgba(0,0,0,0.07);
         }
 
@@ -134,11 +133,7 @@
             font-weight: bold;
         }
 
-        .link-item a:hover {
-            color: var(--qatar-maroon);
-        }
-
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         .footer {
             margin-top: 60px;
             padding: 30px 10px;
@@ -147,24 +142,10 @@
             text-align: center;
             font-size: 0.95rem;
         }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .voice-bot-container {
-                position: static;
-                width: 100%;
-                margin: 20px 0;
-            }
-            .main-content {
-                margin-right: 0;
-            }
-            .hero-banner {
-                padding: 0 10px;
-            }
-        }
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -172,25 +153,26 @@
     <!-- HEADER -->
     <header class="header">
         <h1>مركز مساعدة قطر للتعليم</h1>
+        <h2>مدرسة عثمان بن عفان النموذجية للبنين</h2>
         <p>الدعم الذكي لنظام قطر الموحد للتعليم</p>
     </header>
 
     <!-- HERO IMAGE -->
     <div class="hero-banner">
-        <img src="images/qatar_education_english_only.png" alt="Qatar Education Banner">
+        <img src="qatar_education_english_only.png" alt="Qatar Education Banner">
     </div>
 
-    <!-- VOICE BOT -->
+    <!-- VOICE ASSISTANT -->
     <div class="voice-bot-container">
         <h3>🎙️ المساعد الصوتي الذكي</h3>
         <elevenlabs-convai agent-id="agent_8401k8gg9x9ee0185pwy9tvhkvae"></elevenlabs-convai>
         <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async></script>
     </div>
 
-    <!-- CONTENT -->
+    <!-- MAIN CONTENT -->
     <div class="main-content">
         <h2>مرحباً بكم</h2>
-        <p>يقدم مركز مساعدة قطر للتعليم دعماً فورياً وسريعاً لمستخدمي نظام قطر الموحد للتعليم من خلال المساعد الصوتي وروابط الدعم الرسمية.</p>
+        <p>يقدم مركز مساعدة قطر للتعليم دعماً فورياً للمستخدمين من خلال المساعد الصوتي وروابط الدعم الرسمية.</p>
 
         <h3>الروابط السريعة</h3>
 
@@ -211,9 +193,16 @@
             </div>
 
             <div class="link-item">
-                <h4>🎥 فيديو شرح استعادة كلمة المرور</h4>
+                <h4>🎥 فيديو شرح كلمة المرور</h4>
                 <a href="https://www.youtube.com/watch?v=30Z036u9Xp4" target="_blank">
-                    شرح كامل على YouTube
+                    مشاهدة الفيديو على YouTube
+                </a>
+            </div>
+
+            <div class="link-item">
+                <h4>📺 قناة قطر للتعليم</h4>
+                <a href="https://www.youtube.com/@qatareducation221" target="_blank">
+                    https://www.youtube.com/@qatareducation221
                 </a>
             </div>
 
